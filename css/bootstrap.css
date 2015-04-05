@@ -6611,6 +6611,12 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .header-title { font-size: 40px;}
 .header-text { font-size: 18px;}
 
+
+.icon-size{
+   width:26px;
+   height:26px;
+}
+
 .footer { 
   border-top: 1px solid black;
   padding: 3em 0; 
