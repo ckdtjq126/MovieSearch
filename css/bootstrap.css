@@ -6586,8 +6586,7 @@ button.close {
 
 
 
-body { width: 100%; height: 100%;}
-html, img { width: 100%; height: 100%; }
+body, html { width: 100%; height: 100%;}
 
 h1, h2, h3, h4, h5, h6 { margin: 0 0 35px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
 
@@ -6611,14 +6610,13 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .body .footer {margin-top: 3em;}
 
 @media (min-width: 767px) {  
- /* p p { margin: 0 0 35px; font-size: 20px; line-height: 1.6; }  */
   .body { height: 100%; padding: 0;}
   .body .header-title {font-size: 70px;}
   .body .header-text {font-size: 25px;}
 }
 
 
-.footer { 
+.show-footer { 
   padding: 3em 0; 
   margin-top: 5em;
 }
