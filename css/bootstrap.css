@@ -6606,7 +6606,7 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .body a:hover, .body a:focus { color: #B81E16; }
 
 .body { display: table; vertical-align: middle;}  
-.body .header-title { font-size: 40px;}
+.body .header-title { margin-top: 3em; font-size: 40px;}
 .body .header-text { font-size: 18px;}
 .body .footer {margin-top: 3em;}
 
