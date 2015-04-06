@@ -6607,9 +6607,9 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .body a { color: #ce534d;}
 .body a:hover, .body a:focus { color: #B81E16; }
 
-.body .footer{
+.body .footer, .body .error .footer{
   margin-top: 3em;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 @media (min-width: 767px) {  
