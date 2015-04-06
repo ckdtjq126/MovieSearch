@@ -6616,13 +6616,18 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
   font-size: 65px;
 }
 .core-body .header-text {
-  font-size: 25px;
+  font-size: 26px;
   margin-bottom: 2em;
 }
 
 .index-footer, .error-footer{
-  margin-top: 3em;
-  font-size: 15px;
+  font-size: 18px;
+}
+
+.movie-result {
+  width: 45%;
+  margin: 10px;
+  height: auto;
 }
 
 @media (min-width: 767px) {  

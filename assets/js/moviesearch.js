@@ -9,7 +9,8 @@ $(document).ready(function(){
   if(movie_id === ''){
     indexPage();
   } else {
-    getMovie(movie_id);
+    renderMovie(movie_id);
+    /*getMovie(movie_id);*/
   }
 });
 
@@ -26,18 +27,33 @@ var indexPage = function(){
 };
 
 var getMovie = function(movie_id){
-  var url = "https://www.themoviedb.org/search?query=";
+  var url = "https://www.themoviedb.org/search?query="+movie_id;
   $.ajax({
     url: url,
     async: false,
     dataType: 'json',
     success: function(data){
-      outputMovie(data);},
+      renderMovie(data);},
     error: function(data){
       pageNotFound();
     }
   });
 };
+
+var renderGist = function(movie_id){
+  $.ajax({
+    url = "https://www.themoviedb.org/search?query="+movie_id;
+    dataType: 'html',
+    success: function(response){
+      var view, template, html;
+      $('#moviesearch').html('');
+      template = response;
+      html = Mustache.to_html(response, movie_id);
+      $('#moviesearch').append($(html));
+    }
+  });
+};
+
 
 var pageNotFound = function(){
   $.ajax({
