@@ -36,7 +36,6 @@ var checkError = function(){
     error: function(data){
       errorPage();
     }
-
   });
 };
 
@@ -45,7 +44,6 @@ var indexPage = function(){
     url: 'views/index.html',
     dataType: 'html',
     success : function(data){
-      var template = data;
       $('#moviesearch').html(data);
     }
   });
@@ -56,10 +54,10 @@ var renderMovie = function(data){
     url = 'views/show.html',
     dataType: 'html',
     success: function(response){
-      var view, template, html;
+      var template, html;
       $('#moviesearch').html('');
       template = response;
-      html = Mustache.to_html(response, movie_id);
+      html = Mustache.to_html(response, data);
       $('#moviesearch').append($(html));
 
       $('.choose').click(function(){
