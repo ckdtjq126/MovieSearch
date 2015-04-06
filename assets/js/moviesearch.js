@@ -40,7 +40,7 @@ var getMovie = function(movie_id){
   });
 };
 
-var renderGist = function(movie_id){
+var renderMovie = function(movie_id){
   $.ajax({
     url = "https://www.themoviedb.org/search?query="+movie_id;
     dataType: 'html',
