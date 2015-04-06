@@ -6625,10 +6625,10 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 }
 
 .detail-poster {
-  width: 33%;
-  height: auto;
+  width:185px;
+  height: 278px;
   float: left;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .movie-result {
@@ -6643,11 +6643,12 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
   .core-body .header-text {font-size: 28px;}
 
   .detail-header {
-    font-size: 45px;
+    font-color: ;
+    font-size: 30px;
   }
 
   .detail {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 

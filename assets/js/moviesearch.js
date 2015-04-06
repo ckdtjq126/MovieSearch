@@ -57,11 +57,11 @@ var showResult = function(data){
     url: 'views/show.html',
     dataType: 'html',
     success: function(res){
-      if(count <= 4){
         var template, html;
         $('#moviesearch').html('');
         template = res;
         html = Mustache.to_html(res, data);
+      if(count <= 4){
         $('#moviesearch').append($(html));
         count++;
       }
