@@ -6592,37 +6592,44 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 
 
 /* div classes */
-.body { 
+
+.core-body { 
   color: #46433a; 
   background-color: #d6c9c1; 
-  display: table-cell; 
+  display: table; 
   position: absolute;
   width: 100%; 
   height: 100%; 
   text-align: center; 
   background-size: cover;
+}
+
+.core-body a { color: #ce534d;}
+.core-body a:hover, .core-body a:focus { color: #B81E16; }
+
+.index-body, .error-body {
+  display: table-cell;
   vertical-align: middle;
 }
 
-.body a { color: #ce534d;}
-.body a:hover, .body a:focus { color: #B81E16; }
+.core-body .header-title {
+  font-size: 65px;
+}
+.core-body .header-text {
+  font-size: 25px;
+}
 
-.body .footer, .body .error .footer{
-  margin-top: 3em;
+.index-footer, .error-footer{
+  margin-top: 16px;
   font-size: 20px;
 }
 
 @media (min-width: 767px) {  
-  .body { height: 100%; padding: 0;}
-  .body .header-title {font-size: 70px;}
-  .body .header-text {font-size: 25px;}
+  .core-body { height: 100%; padding: 0;}
+  .core-body .header-title {font-size: 80px;}
+  .core-body .header-text {font-size: 28px;}
 }
 
-
-.show-footer { 
-  padding: 3em 0; 
-  margin-top: 5em;
-}
 
 .gly-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
