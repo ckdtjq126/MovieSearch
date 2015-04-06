@@ -6625,10 +6625,10 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 }
 
 .detail-poster {
-  width:185px;
-  height: 278px;
+  width: 33%;
+  height: 33%;
   float: left;
-  margin-left: 5px;
+  margin-left: auto;
 }
 
 .movie-result {
