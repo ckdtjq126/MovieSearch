@@ -6607,7 +6607,7 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .core-body a { color: #ce534d;}
 .core-body a:hover, .core-body a:focus { color: #B81E16; }
 
-.index-body, .error-body {
+.index-body, .error-body, .detail-body {
   display: table-cell;
   vertical-align: middle;
 }
@@ -6624,6 +6624,13 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
   font-size: 18px;
 }
 
+.detail-poster {
+  width: 33%;
+  height: auto;
+  float: left;
+  margin-left: 10px;
+}
+
 .movie-result {
   width: 45%;
   margin: 10px;
@@ -6634,6 +6641,14 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
   .core-body { height: 100%; padding: 0;}
   .core-body .header-title {font-size: 80px;}
   .core-body .header-text {font-size: 28px;}
+
+  .detail-header {
+    font-size: 45px;
+  }
+
+  .detail {
+    font-size: 30px;
+  }
 }
 
 
