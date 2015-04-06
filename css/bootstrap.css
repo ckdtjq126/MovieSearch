@@ -6625,10 +6625,8 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 }
 
 .detail-poster {
-  width: 33%;
-  height: 33%;
   float: left;
-  margin-left: auto;
+  margin-left: 10px;
 }
 
 .movie-result {
