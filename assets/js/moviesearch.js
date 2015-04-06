@@ -16,7 +16,7 @@ $(document).ready(function(){
   if(movie_id === ''){
     indexPage();
   } else {
-      pageNotFound();    
+      checkURL();    
   }
 });
 
@@ -27,6 +27,76 @@ var indexPage = function(){
     success : function(data){
       var template = data;
       $('#moviesearch').html(data);
+    }
+  });
+};
+
+var checkURL = function(){
+  var resultURL = finalURL + encodeURI(movie_id);
+  $.ajax({
+    url: resultURL,
+    async: false,
+    dataType: 'json',
+    success: function(data){
+      if(data.total_results === 0) {
+        pageNotFound();
+      } else {
+        showResult(data);
+      }
+    },
+    error: function(data){
+      pageNotFound();
+    }
+
+  });
+};
+
+var showResult = function(data){
+  $.ajax({
+    url: 'views/show.html',
+    dataType: 'html',
+    success: function(res){
+      var template, html;
+      $('#moviesearch').html('');
+      template = res;
+      html = Mustache.to_html(res, data);
+      $('#moviesearch').append($(html));
+
+      $('.choose').click(function(){
+        var id = $(this).children().attr('alt');
+        var idIndex = id.indexOf(':');
+        id = id.substring(0,idIndex);
+        getMovieInfo(id);
+      });
+    }
+  });
+};
+
+var getMovieInfo = function(movie_id){
+  var resultURL = searchURL + movie_id + apiURL;
+  $.ajax({
+    url: resultURL,
+    async: false,
+    dataType: 'json',
+    success: function(data){
+      showDetail(data);
+    },
+    error: function(data){
+      pageNotFound();
+    }
+  });
+};
+
+var showDetail = function(data){
+  $.ajax({
+    url: 'views/detail.html',
+    dataType: 'html',
+    success : function(res){
+      var template, html;
+      $('#moviesearch').html('');
+      template = res;
+      html = Mustache.to_html(res, data);
+      $('#moviesearch').append($(html));
     }
   });
 };
