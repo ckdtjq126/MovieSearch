@@ -6596,10 +6596,10 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .core-body { 
   color: #46433a; 
   background-color: #d6c9c1; 
-  display: table; 
-  position: absolute;
   width: 100%; 
   height: 100%; 
+  display: table; 
+  position: absolute;
   text-align: center; 
   background-size: cover;
 }
@@ -6614,9 +6614,11 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 
 .core-body .header-title {
   font-size: 65px;
+  margin-bottom: 0px;
 }
 .core-body .header-text {
   font-size: 25px;
+  margin-top: 0px;
 }
 
 .index-footer, .error-footer{
