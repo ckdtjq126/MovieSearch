@@ -16,89 +16,20 @@ $(document).ready(function(){
   if(movie_id === ''){
     indexPage();
   } else {
-    checkError();
+      pageNotFound();    
   }
 });
-
-var checkError = function(){
-  var checkURL = finalURL + encodeURI(movie_id);
-  $.ajax({
-    url: checkURL,
-    async: false,
-    dataType: 'json',
-    success: function(data){
-      if(data.total_results === 0) {
-        errorPage();
-      } else {
-        renderMovie(data);
-      }
-    },
-    error: function(data){
-      errorPage();
-    }
-  });
-};
 
 var indexPage = function(){
   $.ajax({
     url: 'views/index.html',
     dataType: 'html',
     success : function(data){
+      var template = data;
       $('#moviesearch').html(data);
     }
   });
 };
-
-var renderMovie = function(data){
-  $.ajax({
-    url = 'views/show.html',
-    dataType: 'html',
-    success: function(response){
-      var template, html;
-      $('#moviesearch').html('');
-      template = response;
-      html = Mustache.to_html(response, data);
-      $('#moviesearch').append($(html));
-
-      $('.choose').click(function(){
-        var id = $(this).children().attr('alt');
-        var idIndex = id.indexOf(':');
-        id = id.substring(0,idIndex);
-        getMovie(id);
-      });
-    }
-  });
-};
-
-var getMovie = function(movie_id){
-  var resultURL = searchURL + movie_id + apiURL;
-  $.ajax({
-    url: url,
-    async: false,
-    dataType: 'json',
-    success: function(data){
-      detail(data);
-    },
-    error: function(data){
-      pageNotFound();
-    }
-  });
-};
-
-var detail = function(data){
-  $.ajax({
-    url: 'views/detail.html',
-    dataType: 'html',
-    success : function(res){
-      var template, html;
-      $('#moviesearch').html('');
-      template = res;
-      html = Mustache.to_html(res, data);
-      $('#moviesearch').append($(html));
-    }
-  });
-};
-
 
 var pageNotFound = function(){
   $.ajax({
