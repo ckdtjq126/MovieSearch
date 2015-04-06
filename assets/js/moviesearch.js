@@ -51,16 +51,20 @@ var checkURL = function(){
   });
 };
 
+var count = 0;
 var showResult = function(data){
   $.ajax({
     url: 'views/show.html',
     dataType: 'html',
     success: function(res){
-      var template, html;
-      $('#moviesearch').html('');
-      template = res;
-      html = Mustache.to_html(res, data);
-      $('#moviesearch').append($(html));
+      if(count <= 4){
+        var template, html;
+        $('#moviesearch').html('');
+        template = res;
+        html = Mustache.to_html(res, data);
+        $('#moviesearch').append($(html));
+        count++;
+      }
 
       $('.choose').click(function(){
         var id = $(this).children().attr('alt');
