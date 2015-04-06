@@ -6587,13 +6587,6 @@ button.close {
 
 /* here */
 
-
-p { margin: 0 0 25px; font-size: 18px; line-height: 1.5;}
-
-@media (min-width: 767px) { 
-  p p { margin: 0 0 35px; font-size: 20px; line-height: 1.6; } }
-
-
 a { color: #4775FF;}
 a:hover, a:focus { text-decoration: none; color: #004a6e; }
 
@@ -6614,7 +6607,10 @@ a:hover, a:focus { text-decoration: none; color: #004a6e; }
 .body a { color: #ce534d;}
 .body a:hover, .body a:focus { color: #B81E16; }
 
-.body .footer{margin-top: 3em;}
+.body .footer{
+  margin-top: 3em;
+  font-size: 15px;
+}
 
 @media (min-width: 767px) {  
   .body { height: 100%; padding: 0;}
